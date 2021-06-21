@@ -1,2 +1,2 @@
 # proxmox_boxes
-Different Packer templates for proxmox based virtual machines
+Simple packer templates for Proxmox virtual machines
