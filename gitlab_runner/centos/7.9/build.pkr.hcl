@@ -16,7 +16,7 @@ build {
             "sudo /usr/local/bin/gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner",
             "sudo /usr/local/bin/gitlab-runner start",
             # Register the runner
-            "sudo /usr/local/bin/gitlab-runner register --non-interactive --url ${var.gitlab_instance_url} --registration-token ${var.registration_token} --name ${var.runner_name} --tag-list ${var.runner_tags} --locked --executor shell"
+            "sudo /usr/local/bin/gitlab-runner register --non-interactive --url ${var.gitlab_instance_url} --registration-token ${var.registration_token} --name ${var.runner_name} --tag-list ${var.runner_tags} --executor shell"
         ]
     }
 }
