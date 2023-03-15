@@ -1,0 +1,52 @@
+#cloud-config
+autoinstall:
+  apt:
+    disable_components: []
+    geoip: true
+    preserve_sources_list: false
+    primary:
+    - arches:
+      - amd64
+      - i386
+      uri: http://ca.archive.ubuntu.com/ubuntu
+    - arches:
+      - default
+      uri: http://ports.ubuntu.com/ubuntu-ports
+  packages:
+    - htop
+    - qemu-guest-agent
+  drivers:
+    install: false
+  identity:
+    hostname: ubuntu
+    password: $6$KStGISmdDmpvrpTD$wwOdWAe13BX9eFHr99ZvIbd3R7vzQi4HLG6WMps3sE2S3Vc2fi3M0WevKuLNxr.rH0gS0eSqBNdT16gLisInu1
+    realname: ubuntu
+    username: ubuntu
+  kernel:
+    package: linux-generic
+  keyboard:
+    layout: us
+    toggle: null
+    variant: ''
+  locale: en_US.UTF-8
+  network:
+    ethernets:
+      ens18:
+        dhcp4: true
+    version: 2
+  snaps:
+  - channel: stable
+    classic: false
+    name: docker
+  source:
+    id: ubuntu-server
+    search_drivers: true
+  ssh:
+    allow-pw: true
+    authorized-keys: []
+    install-server: true
+  storage:
+    layout:
+      name: lvm
+  updates: security
+  version: 1
